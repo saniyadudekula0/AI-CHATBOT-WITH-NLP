@@ -1,0 +1,46 @@
+# NLP Chatbot using Python and NLTK
+
+import nltk
+from nltk.chat.util import Chat, reflections
+
+# Download required NLTK data (first run only)
+nltk.download('punkt')
+
+# Define chatbot conversation patterns
+patterns = [
+    [
+        r"hi|hello|hey",
+        ["Hello! How can I help you?", "Hi there! What can I do for you?"]
+    ],
+    [
+        r"what is your name ?",
+        ["I am a Python NLP Chatbot."]
+    ],
+    [
+        r"how are you ?",
+        ["I'm doing great! Thanks for asking."]
+    ],
+    [
+        r"what is python ?",
+        ["Python is a popular programming language used in AI, web, and data science."]
+    ],
+    [
+        r"what is nlp ?",
+        ["NLP stands for Natural Language Processing."]
+    ],
+    [
+        r"who created you ?",
+        ["I was created using Python and NLTK."]
+    ],
+    [
+        r"bye|exit|quit",
+        ["Goodbye! Have a great day."]
+    ]
+]
+
+# Create chatbot object
+chatbot = Chat(patterns, reflections)
+
+# Start chatbot conversation
+print("ChatBot: Hello! Type 'exit' to end the conversation.")
+chatbot.converse()
